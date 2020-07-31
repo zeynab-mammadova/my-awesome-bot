@@ -77,13 +77,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * This is the main class for inbound and outbound communication with the Facebook Messenger Platform. The callback
- * handler is responsible for the webhook verification and processing of the inbound messages and events. It showcases
- * the features of the Messenger Platform.
- *
- * @author Max Grabenhorst
- */
+
 @RestController
 @RequestMapping("/callback")
 public class MessengerPlatformCallbackHandler {
@@ -369,7 +363,7 @@ public class MessengerPlatformCallbackHandler {
 
     private void sendAccountLinking(String recipientId) throws MessengerApiException, MessengerIOException, MalformedURLException {
         // Mandatory https
-        final LogInButton buttonIn = LogInButton.create(new URL("https://<YOUR_REST_CALLBACK_URL>"));
+        final LogInButton buttonIn = LogInButton.create(new URL("https://my-awesome-fb-bot.herokuapp.com/"));
         final LogOutButton buttonOut = LogOutButton.create();
 
         final List<Button> buttons = Arrays.asList(buttonIn, buttonOut);

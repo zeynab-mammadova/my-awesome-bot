@@ -1,0 +1,1 @@
+web: java -Dserver.port=$PORT -jar target/messenger4j-spring-boot-quickstart-template-2.0.0.jar
